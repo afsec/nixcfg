@@ -91,7 +91,7 @@
     description = "User";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
+      librewolf
     #  thunderbird
     ];
   };
@@ -103,11 +103,12 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim rsync git cacert curl wget
-    google-chrome brave
-    tmux tree less
+    gitea
+    chromium brave librewolf
+    tmux tree less file
     cocogitto difftastic watchexec
     helix hexyl
-    # Tool
+    # Tools
     xsensors btop
     # Audio
     pulseaudioFull pulsemixer pavucontrol
@@ -117,9 +118,13 @@
     xfce.xfce4-volumed-pulse
     xfce.xfce4-pulseaudio-plugin
     xfce.xfce4-systemload-plugin
-    xarchiver
+    xarchiver unzip
     # Fixtures
     gnome.gnome-calculator
+    # Ngrok
+    ngrok
+    # Floccus Bookmark server
+    dufs
     # Proton VPN
     protonvpn-cli
     gnome.gnome-keyring
@@ -127,12 +132,18 @@
     gnome.networkmanager-openvpn
     networkmanager-openvpn
     openvpn
+    # Gui Tools
+    gimp
+    abiword
+    gnumeric
     # Vs Code
     #vscode
     # Vs Codium
     #vscodium
     # AppImage runner
     appimage-run
+    # Games
+    minetest
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
